@@ -132,7 +132,7 @@ os.save!
 # For RHEL this is the Binary DVD image from rhn.redhat.com downloads, loopback
 # mounted and made available over HTTP.
 m=Medium.find_or_create_by_name("OpenStack RHEL mirror")
-m.path="http://download.devel.redhat.com/released/RHEL-6/6.4/Server/x86_64/os/"
+m.path="http://mirror.example.com/rhel/$major.$minor/os/$arch"
 m.os_family="Redhat"
 m.operatingsystems << os
 m.save!
