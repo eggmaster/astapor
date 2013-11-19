@@ -113,20 +113,20 @@ class quickstack::nova_network::all_in_one (
     #     debug           => true,
     # }
 
-    class { 'quickstack::ceilometer_controller':
-      ceilometer_metering_secret  => $ceilometer_metering_secret,
-      ceilometer_user_password    => $ceilometer_user_password,
-      controller_priv_floating_ip => $controller_priv_floating_ip,
-      controller_pub_floating_ip  => $controller_pub_floating_ip,
-      qpid_host                   => $qpid_host,
-      verbose                     => $verbose,
-    }
+    # class { 'quickstack::ceilometer_controller':
+    #   ceilometer_metering_secret  => $ceilometer_metering_secret,
+    #   ceilometer_user_password    => $ceilometer_user_password,
+    #   controller_priv_floating_ip => $controller_priv_floating_ip,
+    #   controller_pub_floating_ip  => $controller_pub_floating_ip,
+    #   qpid_host                   => $qpid_host,
+    #   verbose                     => $verbose,
+    # }
 
 
-    class { 'ceilometer::agent::compute':
-        auth_url      => "http://${controller_priv_floating_ip}:35357/v2.0",
-        auth_password => $ceilometer_user_password,
-    }
+    # class { 'ceilometer::agent::compute':
+    #     auth_url      => "http://${controller_priv_floating_ip}:35357/v2.0",
+    #     auth_password => $ceilometer_user_password,
+    # }
 
 
     #controller::corosync { 'quickstack': }
